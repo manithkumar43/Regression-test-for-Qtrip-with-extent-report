@@ -5,9 +5,7 @@ import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
 import java.net.MalformedURLException;
 import java.net.URL;
-import org.apache.commons.io.filefilter.FalseFileFilter;
-import org.apache.logging.log4j.core.config.plugins.util.PluginUtil;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -16,7 +14,7 @@ import org.testng.annotations.Test;
 
 public class TestCase {
 
-    static WebDriver driver;
+    static RemoteWebDriver driver;
 
     @BeforeSuite(alwaysRun = true)
     public static void createDriver() throws MalformedURLException {

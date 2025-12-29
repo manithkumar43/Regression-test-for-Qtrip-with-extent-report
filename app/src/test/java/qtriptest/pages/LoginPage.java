@@ -1,60 +1,84 @@
 package qtriptest.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocator;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
+
     String url = "https://qtripdynamic-qa-frontend.vercel.app/pages/login/";
 
-    WebDriver driver;
+    RemoteWebDriver driver;
 
-    //Locators
-    @FindBy(id = "floatingInput")
+    // Locators
+    @FindBy(xpath = "//input[@name='email']")
     WebElement email;
 
-    @FindBy(id = "floatingPassword")
+    @FindBy(xpath = "//input[@name='password']")
     WebElement password;
 
-    @FindBy(className ="btn-login")
+    @FindBy(className = "btn-login")
     WebElement loginButton;
 
     @FindBy(xpath = "//div[text()='Logout']")
     WebElement LogOutButton;
 
-
-//constructor
-    public LoginPage(WebDriver driver){
-
+    // Constructor
+    public LoginPage(RemoteWebDriver driver) {
         this.driver = driver;
-        AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
-       PageFactory.initElements(factory, this);
-
+        AjaxElementLocatorFactory factory =
+                new AjaxElementLocatorFactory(driver, 10);
+        PageFactory.initElements(factory, this);
     }
 
-    public void navigateToLoginPage(){
-        if(!driver.getCurrentUrl().equals(url)){
-            driver.get(url);
-        }
+    // ----------------------------------------------------
+
+    public void navigateToLoginPage() {
+        driver.get(url);
+
+        // ✅ Synchronization: login page loaded
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(email));
     }
 
-    public boolean performLogin(String username, String Password){
-        email.sendKeys(username);
-        password.sendKeys(Password);
-        loginButton.click();
+    // ----------------------------------------------------
+
+    public boolean performLogin(String username, String Password) {
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Logout']")));
 
-        boolean status= LogOutButton.isDisplayed();
+        // ✅ Synchronization before typing
+        wait.until(ExpectedConditions.visibilityOf(email));
+        email.clear();
+        email.sendKeys(username);
 
-        return status;
+        password.clear();
+        password.sendKeys(Password);
 
+        // ✅ Synchronization before click
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        loginButton.click();
+        System.out.println("User login complete  searching for Logoout button");
+
+        // ✅ Synchronization after login
+        try {
+            WebElement logoutBtn = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Logout']"))
+            );
+            return logoutBtn.isDisplayed();
+        } catch (Exception e) {
+            System.out.println("Logout button not found after login. Login might have failed.");
+            return false;
+        }
+        
     }
 }

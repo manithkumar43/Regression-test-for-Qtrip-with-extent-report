@@ -1,6 +1,7 @@
 package qtriptest.tests;
 
 import qtriptest.DP;
+import qtriptest.DriverSingleton;
 import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
@@ -10,61 +11,71 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class testCase_01 {
 
-    static RemoteWebDriver driver;
-    public static String lastGeneratedUserName;
+        static RemoteWebDriver driver;
+        public static String lastGeneratedUserName;
 
-    @BeforeSuite(alwaysRun = true)
-    public static void createDriver() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName(BrowserType.CHROME);
-        driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
-        driver.manage().window().maximize();
-    }
+        @BeforeMethod
+        public void beforeclass() throws MalformedURLException {
+                driver = DriverSingleton.getDriver();
+        }
 
-    @Test(enabled = true, dataProvider = "testData", dataProviderClass = DP.class)
-    public void TestCase01(String Username, String Password) {
 
-        // ---------- REGISTER ----------
-        RegisterPage registrationPage = new RegisterPage(driver);
-        registrationPage.navigateToRegisterPage();
+        @Test(enabled = true, dataProvider = "testData", dataProviderClass = DP.class, priority = 1, groups = 
+        {"Login Flow"})
+        public void TestCase01(String Username, String Password) throws MalformedURLException {
 
-        boolean registrationStatus =
-                registrationPage.performRegistration("TestUser", "TestPass@123", true);
+                driver = DriverSingleton.getDriver();
 
-        Assert.assertTrue(
-                registrationStatus,
-                "❌ Registration failed: User was not redirected to Login page"
-        );
+                // ---------- REGISTER ----------
+                HomePage homePage = new HomePage(driver);
+                homePage.navigateToHomePage();
 
-        lastGeneratedUserName = registrationPage.lastGeneratedUsername;
+                // ===== Register =====
+                System.out.println("Starting Register form here -->");
+                homePage.clickOnRegister();
+                homePage.VerifyRegisterPageDisplayed();
 
-        //To Use the dynamicly generated user just replace the username with lastGeneratedUserName in perform login method parameter.
+                RegisterPage register = new RegisterPage(driver);
+                System.out.println("Performing dynamic registration");
 
-        // ---------- LOGIN ----------
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.navigateToLoginPage();
+                // 🔑 Always create dynamic user
+                register.performRegistration(Username, Password, true);
 
-        boolean loginStatus =
-                loginPage.performLogin(Username, Password);
+                // 🔑 Always login with generated user
+                String loginUsername = register.lastGeneratedUsername;
+                System.out.println("Logging in with new user: " + loginUsername);
 
-        Assert.assertTrue(
-                loginStatus,
-                "❌ Login failed: User was not redirected to Home page"
-        );
+                // ===== Navigate Home =====
+                homePage.navigateToHomePage();
 
-        // ---------- LOGOUT ----------
-        HomePage homePage = new HomePage(driver);
-        homePage.performLogout();
+                // ===== Login =====
+                LoginPage login = new LoginPage(driver);
+                login.navigateToLoginPage();
 
-        // Optional assertion after logout
-        Assert.assertTrue(
-                driver.getCurrentUrl().endsWith("/"),
-                "❌ Logout failed: User did not return to Home page"
-        );
-    }
+                boolean loginStatus = login.performLogin(loginUsername, Password);
+                if (!loginStatus) {
+                        throw new AssertionError("Login failed for user: " + loginUsername);
+                }
+
+                // ---------- LOGOUT ----------
+
+                homePage.performLogout();
+
+                // Optional assertion after logout
+                Assert.assertTrue(driver.getCurrentUrl().endsWith("/"),
+                                " Logout failed: User did not return to Home page");
+        }
+
+        @AfterMethod
+        public void tearDown() {
+                DriverSingleton.quitDriver();
+        }
 }

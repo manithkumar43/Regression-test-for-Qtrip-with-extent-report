@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name = "QTrip regression testing suite">
+<test name = "QTrip All Test Cases">
+    <classes>
+        <class name="qtriptest.tests.testCase_01"/>
+            <class name="qtriptest.tests.testCase_02"/>
+            <class name="qtriptest.tests.testCase_03"/>
+            <class name="qtriptest.tests.testCase_04"/>
+    </classes>
+</test>
+</suite>
