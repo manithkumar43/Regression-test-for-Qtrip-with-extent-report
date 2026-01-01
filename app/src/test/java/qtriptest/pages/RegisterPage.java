@@ -1,5 +1,6 @@
 package qtriptest.pages;
 
+import qtriptest.SeleniumWrapper;
 import java.sql.Timestamp;
 import java.time.Duration;
 
@@ -44,7 +45,8 @@ public class RegisterPage {
     // ----------------------------------------------------
 
     public void navigateToRegisterPage() {
-        driver.get(url);
+        // driver.get(url);
+        SeleniumWrapper.navigateToUrl(driver, url);
 
         // ✅ Synchronization: page loaded
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -93,17 +95,28 @@ public class RegisterPage {
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
     wait.until(ExpectedConditions.elementToBeClickable(email));
-    email.clear();
-    email.sendKeys(test_data_username);
+    // email.clear();
+    // email.sendKeys(test_data_username);
+    SeleniumWrapper.advSendKeys(email, test_data_username);
+    System.out.println("Enterring password"+test_data_username);
 
-    password.clear();
-    password.sendKeys(Password);
+    // password.clear();
+    // password.sendKeys(Password);
 
-    confirmPassword.clear();
-    confirmPassword.sendKeys(Password);
+    SeleniumWrapper.advSendKeys(password, Password);
+    System.out.println("Enterring password"+Password);
+
+    // confirmPassword.clear();
+    // confirmPassword.sendKeys(Password);
+
+    SeleniumWrapper.advSendKeys(confirmPassword, Password);
+    System.out.println("Entering confirm password"+Password);
 
     wait.until(ExpectedConditions.elementToBeClickable(RegisterButon));
-    RegisterButon.click();
+    // RegisterButon.click();
+    SeleniumWrapper.advClick(RegisterButon, driver);
+    System.out.println("Clicking on register button");
+    System.out.println(driver.getCurrentUrl());
 
     wait.until(ExpectedConditions.urlContains("/login"));
 

@@ -2,7 +2,7 @@
 <testng-results ignored="2" total="14" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-29T20:11:43 IST" name="Gradle suite" finished-at="2025-12-29T20:14:45 IST" duration-ms="181701">
+  <suite started-at="2026-01-01T18:05:19 IST" name="Gradle suite" finished-at="2026-01-01T18:09:34 IST" duration-ms="255529">
     <groups>
       <group name="Booking and Cancellation Flow">
         <method signature="testCase_03.TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587]" name="TestCase03" class="qtriptest.tests.testCase_03"/>
@@ -14,16 +14,16 @@
         <method signature="testCase_02.TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487]" name="TestCase02" class="qtriptest.tests.testCase_02"/>
       </group> <!-- Search and Filter flow -->
       <group name="Login Flow">
-        <method signature="testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@5d0a1059]" name="TestCase01" class="qtriptest.tests.testCase_01"/>
+        <method signature="testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@51e69659]" name="TestCase01" class="qtriptest.tests.testCase_01"/>
       </group> <!-- Login Flow -->
     </groups>
-    <test started-at="2025-12-29T20:11:43 IST" name="Gradle test" finished-at="2025-12-29T20:14:45 IST" duration-ms="181701">
+    <test started-at="2026-01-01T18:05:19 IST" name="Gradle test" finished-at="2026-01-01T18:09:34 IST" duration-ms="255529">
       <class name="qtriptest.tests.testCase_01">
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:11:45 IST" name="beforeclass" finished-at="2025-12-29T20:11:53 IST" duration-ms="7678" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:05:20 IST" name="setUp" finished-at="2026-01-01T18:05:23 IST" duration-ms="2826" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:11:53 IST" name="TestCase01" data-provider="testData" finished-at="2025-12-29T20:12:01 IST" duration-ms="8034" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:05:23 IST" name="TestCase01" data-provider="testData" finished-at="2026-01-01T18:05:32 IST" duration-ms="8690" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,15 +39,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:12:01 IST" name="tearDown" finished-at="2025-12-29T20:12:01 IST" duration-ms="79" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:05:32 IST" name="tearDown" finished-at="2026-01-01T18:05:33 IST" duration-ms="1142" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase01 status=SUCCESS method=testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@51e69659] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:12:01 IST" name="beforeclass" finished-at="2025-12-29T20:12:05 IST" duration-ms="3760" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:05:33 IST" name="setUp" finished-at="2026-01-01T18:05:46 IST" duration-ms="13094" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:12:05 IST" name="TestCase01" data-provider="testData" finished-at="2025-12-29T20:12:14 IST" duration-ms="9162" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:05:46 IST" name="TestCase01" data-provider="testData" finished-at="2026-01-01T18:05:54 IST" duration-ms="7604" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -63,15 +70,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:12:14 IST" name="tearDown" finished-at="2025-12-29T20:12:14 IST" duration-ms="75" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:05:54 IST" name="tearDown" finished-at="2026-01-01T18:05:54 IST" duration-ms="191" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase01 status=SUCCESS method=testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@51e69659] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:12:14 IST" name="beforeclass" finished-at="2025-12-29T20:12:17 IST" duration-ms="2604" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:05:54 IST" name="setUp" finished-at="2026-01-01T18:06:06 IST" duration-ms="12018" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:12:17 IST" name="TestCase01" data-provider="testData" finished-at="2025-12-29T20:12:25 IST" duration-ms="8446" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:06:06 IST" name="TestCase01" data-provider="testData" finished-at="2026-01-01T18:06:14 IST" duration-ms="7589" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -87,23 +101,24 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_01@5d0a1059]" started-at="2025-12-29T20:12:25 IST" name="tearDown" finished-at="2025-12-29T20:12:25 IST" duration-ms="156" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@51e69659]" started-at="2026-01-01T18:06:14 IST" name="tearDown" finished-at="2026-01-01T18:06:14 IST" duration-ms="211" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase01 status=SUCCESS method=testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@51e69659] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- qtriptest.tests.testCase_01 -->
-      <class name="qtriptest.tests.TestCase">
-        <test-method is-config="true" signature="createDriver()[pri:0, instance:qtriptest.tests.TestCase@bae7dc0]" started-at="2025-12-29T20:11:41 IST" name="createDriver" finished-at="2025-12-29T20:11:43 IST" duration-ms="2148" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createDriver -->
-      </class> <!-- qtriptest.tests.TestCase -->
       <class name="qtriptest.tests.testCase_04">
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:13:49 IST" name="beforeclass" finished-at="2025-12-29T20:13:51 IST" duration-ms="1374" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:08:08 IST" name="setUp" finished-at="2026-01-01T18:08:17 IST" duration-ms="9114" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:13:51 IST" name="TestCase04" data-provider="testData" finished-at="2025-12-29T20:14:04 IST" duration-ms="13384" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:08:17 IST" name="TestCase04" data-provider="testData" finished-at="2026-01-01T18:08:35 IST" duration-ms="18307" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -134,15 +149,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:14:04 IST" name="tearDown" finished-at="2025-12-29T20:14:04 IST" duration-ms="59" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:08:35 IST" name="tearDown" finished-at="2026-01-01T18:08:35 IST" duration-ms="141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase04 status=SUCCESS method=testCase_04.TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:14:04 IST" name="beforeclass" finished-at="2025-12-29T20:14:14 IST" duration-ms="9644" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:08:35 IST" name="setUp" finished-at="2026-01-01T18:08:45 IST" duration-ms="9285" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:14:14 IST" name="TestCase04" data-provider="testData" finished-at="2025-12-29T20:14:26 IST" duration-ms="11967" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:08:45 IST" name="TestCase04" data-provider="testData" finished-at="2026-01-01T18:09:03 IST" duration-ms="18212" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -173,15 +195,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:14:26 IST" name="tearDown" finished-at="2025-12-29T20:14:26 IST" duration-ms="66" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:09:03 IST" name="tearDown" finished-at="2026-01-01T18:09:03 IST" duration-ms="129" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase04 status=SUCCESS method=testCase_04.TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:14:26 IST" name="beforeclass" finished-at="2025-12-29T20:14:34 IST" duration-ms="7902" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:09:03 IST" name="setUp" finished-at="2026-01-01T18:09:13 IST" duration-ms="9961" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:14:34 IST" name="TestCase04" data-provider="testData" finished-at="2025-12-29T20:14:45 IST" duration-ms="11233" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:09:13 IST" name="TestCase04" data-provider="testData" finished-at="2026-01-01T18:09:34 IST" duration-ms="21144" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -212,17 +241,24 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2025-12-29T20:14:45 IST" name="tearDown" finished-at="2025-12-29T20:14:45 IST" duration-ms="61" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@61001b64]" started-at="2026-01-01T18:09:34 IST" name="tearDown" finished-at="2026-01-01T18:09:34 IST" duration-ms="128" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase04 status=SUCCESS method=testCase_04.TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@61001b64] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- qtriptest.tests.testCase_04 -->
       <class name="qtriptest.tests.testCase_03">
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:02 IST" name="beforeclass" finished-at="2025-12-29T20:13:03 IST" duration-ms="1197" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:07:00 IST" name="setUp" finished-at="2026-01-01T18:07:10 IST" duration-ms="9969" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:03 IST" name="TestCase03" data-provider="testData" finished-at="2025-12-29T20:13:12 IST" duration-ms="8893" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:07:10 IST" name="TestCase03" data-provider="testData" finished-at="2026-01-01T18:07:23 IST" duration-ms="12806" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -263,15 +299,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:12 IST" name="tearDown" finished-at="2025-12-29T20:13:12 IST" duration-ms="66" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:07:23 IST" name="tearDown" finished-at="2026-01-01T18:07:23 IST" duration-ms="214" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase03 status=SUCCESS method=testCase_03.TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:12 IST" name="beforeclass" finished-at="2025-12-29T20:13:24 IST" duration-ms="11302" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:07:23 IST" name="setUp" finished-at="2026-01-01T18:07:32 IST" duration-ms="8757" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:24 IST" name="TestCase03" data-provider="testData" finished-at="2025-12-29T20:13:31 IST" duration-ms="7423" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:07:32 IST" name="TestCase03" data-provider="testData" finished-at="2026-01-01T18:07:44 IST" duration-ms="12384" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -312,15 +355,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:31 IST" name="tearDown" finished-at="2025-12-29T20:13:31 IST" duration-ms="64" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:07:44 IST" name="tearDown" finished-at="2026-01-01T18:07:44 IST" duration-ms="166" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase03 status=SUCCESS method=testCase_03.TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:31 IST" name="beforeclass" finished-at="2025-12-29T20:13:39 IST" duration-ms="8465" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:07:45 IST" name="setUp" finished-at="2026-01-01T18:07:53 IST" duration-ms="8567" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:39 IST" name="TestCase03" data-provider="testData" finished-at="2025-12-29T20:13:49 IST" duration-ms="9761" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:07:53 IST" name="TestCase03" data-provider="testData" finished-at="2026-01-01T18:08:07 IST" duration-ms="14078" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -361,13 +411,24 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2025-12-29T20:13:49 IST" name="tearDown" finished-at="2025-12-29T20:13:49 IST" duration-ms="62" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@201a4587]" started-at="2026-01-01T18:08:07 IST" name="tearDown" finished-at="2026-01-01T18:08:07 IST" duration-ms="198" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase03 status=SUCCESS method=testCase_03.TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@201a4587] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- qtriptest.tests.testCase_03 -->
       <class name="qtriptest.tests.testCase_02">
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2025-12-29T20:12:26 IST" name="TestCase02" data-provider="testData" finished-at="2025-12-29T20:12:37 IST" duration-ms="11369" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:06:14 IST" name="setUp" finished-at="2026-01-01T18:06:26 IST" duration-ms="11384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:06:26 IST" name="TestCase02" data-provider="testData" finished-at="2026-01-01T18:06:32 IST" duration-ms="6022" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -398,11 +459,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2025-12-29T20:12:37 IST" name="tearDown" finished-at="2025-12-29T20:12:37 IST" duration-ms="165" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:06:32 IST" name="tearDown" finished-at="2026-01-01T18:06:32 IST" duration-ms="170" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase02 status=SUCCESS method=testCase_02.TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2025-12-29T20:12:37 IST" name="TestCase02" data-provider="testData" finished-at="2025-12-29T20:12:49 IST" duration-ms="11552" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:06:32 IST" name="setUp" finished-at="2026-01-01T18:06:43 IST" duration-ms="11495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:06:43 IST" name="TestCase02" data-provider="testData" finished-at="2026-01-01T18:06:51 IST" duration-ms="7756" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -433,11 +505,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2025-12-29T20:12:49 IST" name="tearDown" finished-at="2025-12-29T20:12:49 IST" duration-ms="89" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:06:51 IST" name="tearDown" finished-at="2026-01-01T18:06:51 IST" duration-ms="243" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase02 status=SUCCESS method=testCase_02.TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2025-12-29T20:12:49 IST" name="TestCase02" data-provider="testData" finished-at="2025-12-29T20:13:02 IST" duration-ms="12756" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:06:51 IST" name="setUp" finished-at="2026-01-01T18:06:53 IST" duration-ms="1448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:06:53 IST" name="TestCase02" data-provider="testData" finished-at="2026-01-01T18:07:00 IST" duration-ms="6937" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -468,7 +551,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2025-12-29T20:13:02 IST" name="tearDown" finished-at="2025-12-29T20:13:02 IST" duration-ms="77" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@47e2e487]" started-at="2026-01-01T18:07:00 IST" name="tearDown" finished-at="2026-01-01T18:07:00 IST" duration-ms="139" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCase02 status=SUCCESS method=testCase_02.TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@47e2e487] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

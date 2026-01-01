@@ -26,9 +26,8 @@ public class DriverSingleton {
 
     // Quit WebDriver instance
     public static void quitDriver() {
-        if (driver != null) {
+        if (driver != null) 
             driver.quit(); 
             driver = null;  
-        }
     }
-}
+ }

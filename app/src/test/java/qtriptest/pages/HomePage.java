@@ -1,5 +1,6 @@
 package qtriptest.pages;
 
+import qtriptest.SeleniumWrapper;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -45,11 +46,13 @@ public class HomePage {
 
     public void navigateToHomePage() {
         System.out.println("navigating to Home page");
-        driver.get(url);
+        // driver.get(url);
+        SeleniumWrapper.navigateToUrl(driver, url);
 
         // ✅ Synchronization: homepage loaded
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(searchBox));
+        System.out.println("User is on Home page");
     }
 
     // ----------------------------------------------------
@@ -61,6 +64,7 @@ public class HomePage {
                 wait.until(ExpectedConditions.elementToBeClickable(RegisterButton));
                 System.out.println("Searching and clicking the register button on home page");
         registerBtn.click();
+        SeleniumWrapper.advClick(registerBtn, driver);
 
         // ✅ Assertion: Register page opened
         wait.until(ExpectedConditions.urlContains("/register/"));
@@ -86,7 +90,8 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         wait.until(ExpectedConditions.elementToBeClickable(LogOutButton));
-        LogOutButton.click();
+        // LogOutButton.click();
+        SeleniumWrapper.advClick(LogOutButton, driver);
 
         // ✅ Assertion: Logout successful
         wait.until(ExpectedConditions.visibilityOf(RegisterButton));
@@ -103,8 +108,10 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         wait.until(ExpectedConditions.visibilityOf(searchBox));
-        searchBox.clear();
-        searchBox.sendKeys(city);
+        // searchBox.clear();
+        // searchBox.sendKeys(city);
+
+        SeleniumWrapper.advSendKeys(searchBox, city);
 
         if (shouldExist) {
 

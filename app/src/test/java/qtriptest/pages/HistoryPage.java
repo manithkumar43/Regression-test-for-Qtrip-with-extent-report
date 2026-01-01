@@ -1,5 +1,6 @@
 package qtriptest.pages;
 
+import qtriptest.SeleniumWrapper;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,7 +68,9 @@ public class HistoryPage {
         WebElement cancelBtn = firstRow.findElement(cancelButton);
 
         wait.until(ExpectedConditions.elementToBeClickable(cancelBtn));
-        cancelBtn.click();
+        // cancelBtn.click();
+
+        SeleniumWrapper.advClick(cancelBtn, driver);
 
         System.out.println("First reservation cancelled");
     }

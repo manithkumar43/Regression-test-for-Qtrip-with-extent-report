@@ -1,5 +1,6 @@
 package qtriptest.pages;
 
+import qtriptest.SeleniumWrapper;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -48,6 +49,7 @@ public class LoginPage {
         // ✅ Synchronization: login page loaded
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(email));
+        System.out.println("User is on Login");
     }
 
     // ----------------------------------------------------
@@ -58,15 +60,20 @@ public class LoginPage {
 
         // ✅ Synchronization before typing
         wait.until(ExpectedConditions.visibilityOf(email));
-        email.clear();
-        email.sendKeys(username);
+        // email.clear();
+        // email.sendKeys(username);
+         //applying selenium Wrapper class
+        SeleniumWrapper.advSendKeys(email, username);
 
-        password.clear();
-        password.sendKeys(Password);
+        // password.clear();
+        // password.sendKeys(Password);
+        //applying selenium Wrapper class
+        SeleniumWrapper.advSendKeys(password, Password);
 
         // ✅ Synchronization before click
         wait.until(ExpectedConditions.elementToBeClickable(loginButton));
-        loginButton.click();
+        // loginButton.click();
+        SeleniumWrapper.advClick(loginButton, driver);
         System.out.println("User login complete  searching for Logoout button");
 
         // ✅ Synchronization after login
@@ -74,9 +81,14 @@ public class LoginPage {
             WebElement logoutBtn = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Logout']"))
             );
+            String currenUrl=driver.getCurrentUrl();
+            System.out.println(currenUrl);
             return logoutBtn.isDisplayed();
         } catch (Exception e) {
             System.out.println("Logout button not found after login. Login might have failed.");
+            String currenUrl=driver.getCurrentUrl();
+            System.out.println(currenUrl);
+            
             return false;
         }
         

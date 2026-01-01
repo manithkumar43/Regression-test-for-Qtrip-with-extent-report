@@ -1,30 +1,35 @@
 package qtriptest.tests;
 
+import qtriptest.DriverSingleton;
+import qtriptest.ReportSingleton;
 import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
 import java.net.MalformedURLException;
 import java.net.URL;
-
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class TestCase {
+public class TestCase extends BaseTest {
+    // static ExtentReports reports;
+    // static ExtentTest test;
 
-    static RemoteWebDriver driver;
+    // static RemoteWebDriver driver;
 
-    @BeforeSuite(alwaysRun = true)
-    public static void createDriver() throws MalformedURLException {
-        // Launch Browser using Zalenium
-        final DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName(BrowserType.CHROME);
-        driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
-        driver.manage().window().maximize();
-        System.out.println("createDriver()");
-    }
+    // @BeforeMethod
+    // public void beforeclass() throws MalformedURLException {
+    //         driver = DriverSingleton.getDriver();
+    //         reports=ReportSingleton.getReport();
+    //         test=reports.startTest("Testcase01");
+    // }
+    
 
     @Test(enabled =false)
     public void testLogin(){
@@ -32,6 +37,7 @@ public class TestCase {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.navigateToLoginPage();
         loginPage.performLogin("test123@gmail.com", "test123");
+        System.out.println(System.getProperty("user.dir"));
 
     }
 
@@ -66,5 +72,12 @@ public class TestCase {
         homePage.performLogout();
     }
     
+    // @AfterMethod
+    // public void tearDown() {
+            
+    //     reports.endTest(test);
+    //     reports.flush();
+    //     DriverSingleton.quitDriver();
+    // }
     
 }

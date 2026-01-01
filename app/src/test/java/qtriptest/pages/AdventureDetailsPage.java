@@ -1,6 +1,8 @@
 package qtriptest.pages;
 
+import qtriptest.SeleniumWrapper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -33,24 +35,65 @@ public class AdventureDetailsPage {
 
     public void adventureBooking(String name, String date, int count) {
 
-        // ✅ Wait for booking form to be ready
-        wait.until(ExpectedConditions.presenceOfElementLocated(guestNameInput));
-
-        System.out.println("Entering guest name");
-        driver.findElement(guestNameInput).clear();
-        driver.findElement(guestNameInput).sendKeys(name);
-
-        System.out.println("Entering date");
-        driver.findElement(dateInput).clear();
-        driver.findElement(dateInput).sendKeys(date);
-
-        System.out.println("Entering count");
-        driver.findElement(personInput).clear();
-        driver.findElement(personInput).sendKeys(String.valueOf(count));
-
-        System.out.println("Clicking on reservation");
-        driver.findElement(reserveButton).click();
-        System.out.println("Reservation submitted");
+        // ✅ Booking form should be present
+        Assert.assertTrue(
+                wait.until(ExpectedConditions.presenceOfElementLocated(guestNameInput)) != null,
+                "Guest name input is not present"
+        );
+    
+        // 🔹 Guest name
+        WebElement guestName =
+                SeleniumWrapper.findElementWithRetry(driver, guestNameInput, 3);
+        Assert.assertNotNull(guestName, "Guest name element not found");
+    
+        Assert.assertTrue(
+                SeleniumWrapper.advSendKeys(guestName, name),
+                "Failed to enter guest name"
+        );
+    
+        // 🔹 Date
+        WebElement dateInputElement =
+                SeleniumWrapper.findElementWithRetry(driver, dateInput, 3);
+        Assert.assertNotNull(dateInputElement, "Date input element not found");
+    
+        Assert.assertTrue(
+                SeleniumWrapper.advSendKeys(dateInputElement, date),
+                "Failed to enter date"
+        );
+    
+        // 🔹 Person count 
+        WebElement personInputElement =
+                SeleniumWrapper.findElementWithRetry(driver, personInput, 3);
+        Assert.assertNotNull(personInputElement, "Person count element not found");
+    
+        Assert.assertTrue(
+                SeleniumWrapper.advSendKeys(personInputElement, String.valueOf(count)),
+                "Failed to enter person count"
+        );
+    
+        // 🔹 Reserve button
+        WebElement reserveButtonElement =
+                SeleniumWrapper.findElementWithRetry(driver, reserveButton, 3);
+        Assert.assertNotNull(reserveButtonElement, "Reserve button not found");
+    
+        Assert.assertTrue(
+                SeleniumWrapper.advClick(reserveButtonElement, driver),
+                "Failed to click Reserve button"
+        );
+    
+        // 🔹 Success banner assertion
+        WebElement successMessage =
+                wait.until(ExpectedConditions.visibilityOfElementLocated(successBanner));
+    
+        Assert.assertTrue(
+                successMessage.isDisplayed(),
+                "Success banner is not displayed"
+        );
+    
+        Assert.assertTrue(
+                successMessage.getText().toLowerCase().contains("success"),
+                "Booking failed. Message: " + successMessage.getText()
+        );
     }
 
     // ----------------------------------------------------
@@ -60,7 +103,10 @@ public class AdventureDetailsPage {
         // ✅ Stale-safe success check
         wait.until(ExpectedConditions.presenceOfElementLocated(successBanner));
 
-        String bannerText = driver.findElement(successBanner).getText().toLowerCase();
+        //String bannerText = driver.findElement(successBanner).getText().toLowerCase();
+        WebElement bannerTextElement= SeleniumWrapper.findElementWithRetry(driver, successBanner, 3);
+        String bannerText = bannerTextElement.getText().toLowerCase();
+
 
         Assert.assertTrue(
                 bannerText.contains("success"),
@@ -76,6 +122,10 @@ public class AdventureDetailsPage {
 
         wait.until(ExpectedConditions.elementToBeClickable(historyLink));
         driver.findElement(historyLink).click();
+
+        WebElement historyLinkElement= SeleniumWrapper.findElementWithRetry(driver, historyLink, 3);
+        SeleniumWrapper.advClick(historyLinkElement, driver);
+
 
         wait.until(ExpectedConditions.urlContains("reservations"));
         Assert.assertTrue(

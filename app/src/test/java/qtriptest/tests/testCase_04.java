@@ -15,15 +15,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class testCase_04 {
+public class testCase_04 extends BaseTest {
 
 
-    RemoteWebDriver driver;
+    // RemoteWebDriver driver;
 
-    @BeforeMethod
-    public void beforeclass() throws MalformedURLException {
-        driver = DriverSingleton.getDriver();
-    }
+    // @BeforeMethod
+    // public void beforeclass() throws MalformedURLException {
+    //     driver = DriverSingleton.getDriver();
+    // }
     
 
     public String[] parseDataset(String dataset) {
@@ -103,10 +103,10 @@ public class testCase_04 {
        
     }
 
-    @AfterMethod
-    public void tearDown(){
-        DriverSingleton.quitDriver();
-    }
+    // @AfterMethod
+    // public void tearDown(){
+    //     DriverSingleton.quitDriver();
+    // }
 
 
 }

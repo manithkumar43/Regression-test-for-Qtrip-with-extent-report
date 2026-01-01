@@ -17,14 +17,14 @@ import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
 
-public class testCase_03 {
+public class testCase_03 extends BaseTest {
 
-    RemoteWebDriver driver;
+    // RemoteWebDriver driver;
 
-    @BeforeMethod
-    public void beforeclass() throws MalformedURLException {
-        driver = DriverSingleton.getDriver();
-    }
+    // @BeforeMethod
+    // public void beforeclass() throws MalformedURLException {
+    //     driver = DriverSingleton.getDriver();
+    // }
 
     @Test(enabled = true, dataProvider = "testData", dataProviderClass = DP.class, priority = 3, groups = {"Booking and Cancellation Flow"})
     public void TestCase03(
@@ -97,8 +97,8 @@ public class testCase_03 {
         historyPage.verifyTransactionRemoved(beforeIds);
     }
 
-    @AfterMethod
-    public void tearDown() {
-        DriverSingleton.quitDriver();
-    }
+    // @AfterMethod
+    // public void tearDown() {
+    //     DriverSingleton.quitDriver();
+    // }
 }

@@ -15,9 +15,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class testCase_02 {
+public class testCase_02 extends BaseTest{
 
-        static RemoteWebDriver driver;
+        // static RemoteWebDriver driver;
 
 
         @Test(enabled = true, dataProvider = "testData", dataProviderClass = DP.class, priority = 2, groups = {"Search and Filter flow"})
@@ -65,9 +65,9 @@ public class testCase_02 {
                 adventurePage.verifyResultCount(expectedUnFiltered);
         }
 
-        @AfterMethod
-        public void tearDown() {
-                DriverSingleton.quitDriver();
-        }
+        // @AfterMethod
+        // public void tearDown() {
+        //         DriverSingleton.quitDriver();
+        // }
 
 }

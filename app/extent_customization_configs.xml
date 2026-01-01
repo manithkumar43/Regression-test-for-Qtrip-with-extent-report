@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <!-- Report Configuration -->
+    <configuration>
+        <!-- Report Name shown at the top -->
+        <reportName>Regression test for QTrip</reportName>
+
+        <!-- Report Title (browser tab and header) -->
+        <documentTitle>QTrip Regression Suite</documentTitle>
+
+        <!-- Theme: STANDARD or DARK -->
+        <theme>STANDARD</theme>
+
+        <!-- Show Test Runner Logs -->
+        <encoding>UTF-8</encoding>
+        <protocol>HTTP</protocol>
+
+        <!-- Timestamp format for logs -->
+        <timestampFormat>yyyy-MM-dd HH:mm:ss</timestampFormat>
+    </configuration>
+</extentreports>

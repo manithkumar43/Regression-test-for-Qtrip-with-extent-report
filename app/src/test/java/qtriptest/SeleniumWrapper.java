@@ -17,6 +17,7 @@ public class SeleniumWrapper {
                         .executeScript("arguments[0].scrollIntoView(true);", element);
 
                 element.click();
+                System.out.println("Button clicked");
                 return true;
             }
         } catch (Exception e) {

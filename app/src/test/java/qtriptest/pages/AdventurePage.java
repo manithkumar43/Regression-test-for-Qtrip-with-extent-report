@@ -1,5 +1,6 @@
 package qtriptest.pages;
 
+import qtriptest.SeleniumWrapper;
 import java.time.Duration;
 import java.util.List;
 
@@ -92,7 +93,9 @@ public class AdventurePage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         wait.until(ExpectedConditions.elementToBeClickable(clearDurationBtn));
-        clearDurationBtn.click();
+        // clearDurationBtn.click();
+
+        SeleniumWrapper.advClick(clearDurationBtn, driver);
 
         wait.until(ExpectedConditions.visibilityOfAllElements(activityCards));
 
@@ -107,7 +110,8 @@ public class AdventurePage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         wait.until(ExpectedConditions.elementToBeClickable(clearCategoryBtn));
-        clearCategoryBtn.click();
+        // clearCategoryBtn.click();
+        SeleniumWrapper.advClick(clearCategoryBtn, driver);
 
         wait.until(ExpectedConditions.visibilityOfAllElements(activityCards));
 
@@ -145,7 +149,9 @@ public class AdventurePage {
         WebElement cardLink =
                 wait.until(ExpectedConditions.elementToBeClickable(adventureCardLink));
 
-        cardLink.click();
+        // cardLink.click();
+
+        SeleniumWrapper.advClick(cardLink, driver);
 
         // ✅ Assertion + sync: details page loaded
         wait.until(ExpectedConditions.urlContains("adventures/detail"));
